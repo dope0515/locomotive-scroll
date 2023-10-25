@@ -29,7 +29,7 @@ import LocomotiveScroll from '../../../src/locomotive-scroll';
             horizontalGesture: true
         }
         options.smartphone = {
-            smooth: false // 스마트폰에서 스무스 스크롤 비활성화
+            smooth: true // 스마트폰에서 스무스 스크롤 비활성화
         }
         options.reloadOnContextChange = true
     }
