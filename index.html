@@ -1,0 +1,341 @@
+<!doctype html>
+<html class="is-smooth-scroll-compatible is-loading" lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>Locomotive Scroll | Detection of elements in viewport & smooth scrolling with parallax effects.</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- <meta name="theme-color" content="#ffffff">
+        <meta name="msapplication-TileColor" content="#ffffff"> -->
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="apple-touch-icon" sizes="152x152" href="dist/images/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="dist/images/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="dist/images/favicons/favicon-16x16.png">
+        <link rel="mask-icon" href="dist/images/favicons/safari-pinned-tab.svg" color="#000000">
+
+        <link rel="stylesheet" href="dist/styles/main.css">
+    </head>
+    <body>
+
+        <div class="o-scroll" id="js-scroll" data-scroll-container>
+            <div data-scroll-section>
+                <div class="o-container">
+                    <header class="c-header" id="header">
+                        <div class="c-header_heading" data-scroll data-scroll-speed="-8" data-scroll-position="top" data-scroll-target="#header" data-scroll-repeat>
+                            <div class="o-layout">
+                                <div class="o-layout_item u-1/2" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-2" data-scroll-position="top" data-scroll-target="#header">
+                                    <span class="u-label c-header_heading_label">
+                                        <a href="https://locomotive.ca" target="_blank" rel="noopener noreferrer">
+                                            Locomotive.ca
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="o-layout_item u-1/2" data-scroll data-scroll-direction="horizontal" data-scroll-speed="2" data-scroll-position="top" data-scroll-target="#header">
+                                    <div class="u-text-right">
+                                        <p class="u-label c-header_heading_label">
+                                            v4.x – Edition
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h1 class="c-header_title o-h1" data-scroll>
+                            <span class="c-header_title_line">
+                                <span data-scroll data-scroll-speed="3" data-scroll-position="top">Locomotive</span>
+                            </span>
+                            <span class="c-header_title_line">
+                                <span data-scroll data-scroll-speed="2" data-scroll-position="top">Scroll</span>
+                            </span>
+                            <span class="c-header_title_line -version u-white">
+                                <span class="o-h1" data-scroll data-scroll-speed="3" data-scroll-position="top" data-scroll-delay="0.05">v</span><span class="o-h1" data-scroll data-scroll-speed="5" data-scroll-position="top" data-scroll-delay="0.05">4</span><span class="o-h1" data-scroll data-scroll-speed="2" data-scroll-position="top" data-scroll-delay="0.05">.</span><span class="o-h1" data-scroll data-scroll-speed="4" data-scroll-position="top" data-scroll-delay="0.05">X</span>
+                            </span>
+                        </h1>
+                        <hr class="c-header_line" data-scroll data-scroll-offset="100" />
+                        <!-- <a class="c-header_logo" href="https://locomotive.ca" target="_blank">
+                            <svg role="img"><use xlink:href="dist/images/sprite.svg#logo"></use></svg>
+                        </a> -->
+                    </header>
+                </div>
+            </div>
+
+            <section data-scroll-section>
+                <div class="o-container">
+                    <div class="c-summary" data-scroll>
+                        <div class="o-layout -gutter">
+                            <div class="o-layout_item">
+                                <ul class="c-summary_list">
+                                    <li class="c-summary_list_item u-label" data-scroll>
+                                        <a href="#speed-control" data-scroll-to>
+                                            01. Speed Control
+                                            <span class="c-summary_list_icon u-icon">
+                                                ↓
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="c-summary_list_item u-label" data-scroll>
+                                        <a href="#scroll-direction" data-scroll-to>
+                                            02. Scroll direction
+                                            <span class="c-summary_list_icon u-icon">
+                                                ↓
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="c-summary_list_item u-label" data-scroll>
+                                        <a href="#lerp-effect" data-scroll-to>
+                                            03. Lerp effect
+                                            <span class="c-summary_list_icon u-icon">
+                                                ↓
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="c-summary_list_item u-label" data-scroll>
+                                        <a href="#fixed-elements" data-scroll-to>
+                                            04. Fixed Elements
+                                            <span class="c-summary_list_icon u-icon">
+                                                ↓
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--스피드 컨트롤-->
+            <section class="c-section" data-scroll-section>
+                <div class="o-container" id="speed-control">
+                    <div class="o-layout -gutter">
+                        <div class="o-layout_item u-2/5@from-medium">
+                            <div class="c-section_infos -padding" data-scroll data-scroll-speed="-2" data-scroll-call="test">
+                                <div class="c-section_infos_inner" data-scroll data-scroll-offset="200">
+                                    <h3>
+                                        01. <br>
+                                        Speed control
+                                    </h3>
+                                    <div class="c-sections_infos_text u-text">
+                                        <p>
+                                            각 요소는 서로 다른 속도로 애니메이션을 적용할 수 있습니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="o-layout_item u-3/5@from-medium">
+                            <div class="c-speed-block" data-scroll data-scroll-speed="2">
+                                <div class="o-image_wrapper" data-scroll data-scroll-call="dynamicBackground" data-scroll-repeat>
+                                    <div class="o-image" data-scroll>
+                                        <img class="c-speed-block_image" src="dist/images/locomotive01.jpg" alt="Locomotive image from unsplash">
+                                    </div>
+                                </div>
+                                <p class="c-speed-block_title" data-scroll>
+                                    Speed x2
+                                </p>
+                                <span class="c-speed-block_bubble" data-scroll data-scroll-speed="4" data-scroll-call="dynamicColor" data-scroll-repeat>
+                                    4x
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="o-layout -gutter -bottom">
+                        <div class="o-layout_item u-2/5@from-medium">
+                            <div class="c-speed-block" data-scroll data-scroll-speed="4">
+                                <div class="o-image_wrapper" data-scroll data-scroll-call="dynamicBackground" data-scroll-repeat>
+                                    <div class="o-image" data-scroll data-scroll-speed="-1.5">
+                                        <img class="c-speed-block_image" src="dist/images/locomotive02.jpg" alt="Locomotive image from unsplash">
+                                    </div>
+                                </div>
+                                <p class="c-speed-block_title" data-scroll>
+                                    Speed x4
+                                </p>
+                                <span class="c-speed-block_bubble -right" data-scroll data-scroll-speed="1" data-scroll-call="dynamicColor" data-scroll-repeat>
+                                    1x
+                                </span>
+                                <span class="c-speed-block_bubble -left -bottom" data-scroll data-scroll-speed="3" data-scroll-call="dynamicColor" data-scroll-repeat>
+                                    3x
+                                </span>
+                            </div>
+                        </div>
+                        <div class="o-layout_item u-3/5@from-medium">
+                            <div class="o-layout u-text-right">
+                                <div class="o-layout_item u-1/2@from-medium">
+                                    <div class="c-speed-block -margin" data-scroll data-scroll-speed="6">
+                                        <div class="o-image_wrapper" data-scroll data-scroll-call="dynamicBackground" data-scroll-repeat>
+                                            <div class="o-image" data-scroll data-scroll-speed="-2">
+                                                <img class="c-speed-block_image" src="dist/images/locomotive03.jpg" alt="Locomotive image from unsplash">
+                                            </div>
+                                        </div>
+                                        <p class="c-speed-block_title" data-scroll>
+                                            Speed x6
+                                        </p>
+                                        <span class="c-speed-block_bubble -left -top" data-scroll data-scroll-speed="2" data-scroll-call="dynamicColor" data-scroll-repeat>
+                                            2x
+                                        </span>
+                                        <span class="c-speed-block_bubble -right" data-scroll data-scroll-speed="6" data-scroll-call="dynamicColor" data-scroll-repeat>
+                                            6x
+                                        </span>
+                                        <span class="c-speed-block_bubble -left -bottom" data-scroll data-scroll-speed="9" data-scroll-call="dynamicColor" data-scroll-repeat>
+                                            9x
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--스피드 컨트롤-->
+            <!--스크롤 방향-->
+            <section class="c-section" data-scroll-section>
+                <div class="o-container" id="scroll-direction">
+                    <div class="c-direction-block_wrapper">
+                        <div class="c-section_infos -padding" data-scroll data-scroll-sticky data-scroll-target="#scroll-direction">
+                            <div class="c-section_infos_inner" data-scroll>
+                                <h3>
+                                    02. <br>
+                                    Scroll direction
+                                </h3>
+                                <div class="c-sections_infos_text u-text">
+                                    <p>
+                                        And if that wasn't enough, make 'em go backwards. Or upwards. Or downwards!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-direction-block" id="direction">
+                            <div class="c-direction-block_item -one">
+                                <span class="c-direction-block_item_inner" data-scroll data-scroll-direction="horizontal" data-scroll-speed="6" data-scroll-target="#direction">
+                                    I'm moving in this direction
+                                </span>
+                            </div>
+                            <div class="c-direction-block_item -two">
+                                <span class="c-direction-block_item_inner" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-8" data-scroll-target="#direction">
+                                    And in this direction
+                                </span>
+                            </div>
+                            <div class="c-direction-block_item -three">
+                                <span class="c-direction-block_item_inner" data-scroll data-scroll-direction="horizontal" data-scroll-speed="9" data-scroll-target="#direction" data-scroll-delay="0.05">
+                                    Sooo customizable. Right?
+                                </span>
+                            </div>
+                            <div class="c-direction-block_item -four">
+                                <span class="c-direction-block_item_inner" data-scroll data-scroll-direction="horizontal" data-scroll-speed="15" data-scroll-target="#direction">
+                                    I can also go in this direction
+                                </span>
+                            </div>
+                            <div class="c-direction-block_item -five">
+                                <span class="c-direction-block_item_inner" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-20" data-scroll-target="#direction" data-scroll-delay="0.05">
+                                    Ok, enough!!!!
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--스크롤 방향-->
+            <!---->
+            <section class="c-section" data-scroll-section>
+                <div class="o-container" id="lerp-effect">
+                    <div class="o-layout">
+                        <div class="o-layout_item u-2/5@from-medium">
+                            <div class="c-section_infos" data-scroll>
+                                <div class="c-section_infos_inner" data-scroll data-scroll-offset="200">
+                                    <h3>
+                                        03. <br>
+                                        Lerp elements
+                                    </h3>
+                                    <div class="c-sections_infos_text u-text">
+                                        <p>
+                                            지연을 사용하여 부드러운 애니메이션에 시차를 두어 서두르거나 끌리는 효과를 만듭니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="o-layout_item u-3/5@from-medium">
+                            <div class="c-lerp-block">
+                                <span class="c-lerp-block_index" data-scroll data-scroll-delay="0.2" data-scroll-speed="6" data-scroll-call="dynamicColor" data-scroll-repeat>
+                                    01
+                                </span>
+                                <span class="c-lerp-block_title" data-scroll data-scroll-delay="0.6" data-scroll-speed="6">
+                                    <span>
+                                        딜레이가 있습니다.
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="c-lerp-block">
+                                <span class="c-lerp-block_index" data-scroll data-scroll-delay="0.06" data-scroll-speed="6" data-scroll-call="dynamicColor" data-scroll-repeat>
+                                    02
+                                </span>
+                                <span class="c-lerp-block_title" data-scroll data-scroll-delay="0.1" data-scroll-speed="6">
+                                    <span>
+                                        딜레이가 좀 더 있습니다.
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="c-lerp-block">
+                                <span class="c-lerp-block_index" data-scroll data-scroll-delay="0.06" data-scroll-speed="6" data-scroll-call="dynamicColor" data-scroll-repeat>
+                                    03
+                                </span>
+                                <span class="c-lerp-block_title" data-scroll>
+                                    <span data-scroll data-scroll-delay="0.13" data-scroll-speed="6">한</span>
+                                    <span data-scroll data-scroll-delay="0.12" data-scroll-speed="6">글</span>
+                                    <span data-scroll data-scroll-delay="0.11" data-scroll-speed="6">자</span>
+                                    <span data-scroll data-scroll-delay="0.1" data-scroll-speed="6">씩</span>
+                                    <span data-scroll data-scroll-delay="0.09" data-scroll-speed="6">움</span>
+                                    <span data-scroll data-scroll-delay="0.08" data-scroll-speed="6">직</span>
+                                    <span data-scroll data-scroll-delay="0.07" data-scroll-speed="6">여</span>
+                                    <span data-scroll data-scroll-delay="0.06" data-scroll-speed="6">요</span>
+                                    <span data-scroll data-scroll-delay="0.05" data-scroll-speed="6">!</span>
+                                </span>
+                            </div>
+                            <div class="c-lerp-block">
+                                <span class="c-lerp-block_index" data-scroll data-scroll-delay="0.03" data-scroll-speed="6" data-scroll-call="dynamicColor" data-scroll-repeat>
+                                    04
+                                </span>
+                                <span class="c-lerp-block_title" data-scroll data-scroll-delay="0.04" data-scroll-speed="6">
+                                    <span>
+                                        부드럽게 움직입니다.
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="c-section -fixed" data-scroll-section data-persistent>
+                <div class="o-container" id="fixed-elements">
+                    <div class="o-layout">
+                        <div class="o-layout_item u-2/5@from-medium">
+                            <div class="c-section_infos -padding" data-scroll data-scroll-sticky data-scroll-target="#fixed-elements">
+                                <div class="c-section_infos_inner" data-scroll data-scroll-offset="200">
+                                    <h3>
+                                        04. <br>
+                                        Fixed elements
+                                    </h3>
+                                    <div class="c-sections_infos_text u-text">
+                                        <p>
+                                            스크롤하는 동안 뷰포트에 고정되거나 선택 해제되는 슬라이드를 만듭니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="o-layout_item u-3/5@from-medium">
+                            <div class="c-fixed_wrapper" data-scroll data-scroll-call="dynamicBackground" data-scroll-repeat>
+                                <div class="c-fixed_target" id="fixed-target"></div>
+                                <div class="c-fixed" data-scroll data-scroll-sticky data-scroll-target="#fixed-target" style="background-image:url('dist/images/locomotive04.jpg')"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js" crossorigin="anonymous"></script>
+        <script nomodule src="https://polyfill.io/v3/polyfill.min.js?features=Object.assign%2CElement.prototype.append%2CNodeList.prototype.forEach%2CCustomEvent%2Csmoothscroll" crossorigin="anonymous"></script>
+
+        <script src="dist/scripts/main.js"></script>
+    </body>
+</html>
